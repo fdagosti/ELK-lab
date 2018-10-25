@@ -2,12 +2,12 @@
 
 ## Travaux Pratiques
 
+- Ensure you have Java installed or install it: https://www.oracle.com/technetwork/java/javase/downloads/index.html
+  - For windows user, don't forget to [setup the path](https://www.theserverside.com/tutorial/How-to-install-the-JDK-on-Windows-and-setup-JAVA_HOME)
 - Download ElasticSearch and unzip it
-  - https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html
-  - for windows users: www.elastic.co/guide/en/elasticsearch/reference/6.4/windows.html
+  - https://www.elastic.co/downloads/elasticsearch
 - Download Kibana and unzip it
   - www.elastic.co/guide/en/kibana/current/install.html
-  - For windows Users: www.elastic.co/guide/en/kibana/current/windows.html
   
   
   
