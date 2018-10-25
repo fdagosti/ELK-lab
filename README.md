@@ -13,7 +13,87 @@
   
 ## Demo
 - ElasticSearch
-  - www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html
+  - CAT APIs
+```
+GET /_cat/health?v 
+
+GET /_cat/nodes?v  
+
+GET /_cat/indices?v
+
+PUT /customer?pretty
+GET /_cat/indices?v
+
+PUT /customer/_doc/1?pretty
+{
+"name": "John Doe"
+}
+
+GET /customer/_doc/1?pretty
+
+DELETE /customer?pretty
+GET /_cat/indices?v
+
+PUT /customer
+PUT /customer/_doc/1
+
+GET /customer/_doc/1
+DELETE /customer
+
+<HTTP Verb> /<Index>/<Type>/<ID>
+
+PUT /customer/_doc/1?pretty
+{
+  "name": "John Doe"
+}
+
+PUT /customer/_doc/1?pretty
+{
+  "name": "Jane Doe"
+}
+
+PUT /customer/_doc/2?pretty
+{
+  "name": "Jane Doe"
+}
+
+POST /customer/_doc?pretty
+{
+  "name": "Jane Doe"
+}
+
+POST /customer/_doc/1/_update?pretty
+{
+  "doc": { "name": "Jane Doe" }
+}
+
+POST /customer/_doc/1/_update?pretty
+{
+  "doc": { "name": "Jane Doe", "age": 20 }
+}
+
+POST /customer/_doc/1/_update?pretty
+{
+  "script" : "ctx._source.age += 5"
+}
+
+DELETE /customer/_doc/2?pretty
+
+POST /customer/_doc/_bulk?pretty
+{"index":{"_id":"1"}}
+{"name": "John Doe" }
+{"index":{"_id":"2"}}
+{"name": "Jane Doe" }
+
+POST /customer/_doc/_bulk?pretty
+{"update":{"_id":"1"}}
+{"doc": { "name": "John Doe becomes Jane Doe" } }
+{"delete":{"_id":"2"}}
+
+```
+  [Kibana Console](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://www.elastic.co/guide/en/elasticsearch/reference/current/snippets/_cluster_health/1.json)
+  
+  [Kibana Console](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://www.elastic.co/guide/en/elasticsearch/reference/current/snippets/_cluster_health/2.json)
   - explication de l’interface REST
   - ajout de quelques index et data
 - Kibana
